@@ -16,6 +16,14 @@ const CalendarHead = () => {
   );
 }
 
+const CalendarCaption = () => {
+  return (
+    <caption>
+      <h1>May / June 2019</h1>
+    </caption>
+  );
+}
+
 const CalendarBody = () => {
   return (
     <tbody>
@@ -40,6 +48,7 @@ class App extends Component {
     return (
       <div className="App">
         <table className="Calendar">
+          <CalendarCaption />
           <CalendarHead />
           <CalendarBody />
         </table>

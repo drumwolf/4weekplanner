@@ -4,16 +4,35 @@ const CalendarHead = () => {
   return (
     <thead>
       <tr>
-        <td>Sunday</td>
-        <td>Monday</td>
-        <td>Tuesday</td>
-        <td>Wednesday</td>
-        <td>Thursday</td>
-        <td>Friday</td>
-        <td>Saturday</td>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
       </tr>
     </thead>
   );
+}
+
+const CalendarBody = () => {
+  return (
+    <tbody>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </tbody>
+  )
 }
 
 class App extends Component {
@@ -22,6 +41,7 @@ class App extends Component {
       <div className="App">
         <table className="Calendar">
           <CalendarHead />
+          <CalendarBody />
         </table>
       </div>
     );

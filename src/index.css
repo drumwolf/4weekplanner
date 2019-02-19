@@ -12,3 +12,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+table {
+  background-color: #999;
+  width: 100%;
+}
+th {
+  background-color: #d7d7d7;
+  padding: 2px 0;
+  height: 2vh;
+  width: 14.2%;
+}
+td {
+  background-color: #fff;
+  height: 24vh;
+}

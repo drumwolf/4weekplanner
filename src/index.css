@@ -13,17 +13,65 @@ code {
     monospace;
 }
 
-table {
-  background-color: #999;
-  width: 100%;
+.App {
+  display: flex;
 }
-th {
+
+/***** calendar section *****/
+.Calendar {
+  width: 80vw;
+}
+.Calendar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.Calendar li {
+  border-radius: 3px;
+  box-sizing: border-box;
+  float: left;
+  margin: 5px 2px;
+  text-align: center;
+  width: calc(14.25% - 4px);
+}
+.CalendarHeader {
+  background-color: #300;
+  box-shadow: 0 3px 6px -3px #333;
+  color: #ccc;
+  height: 12vh;
+  line-height: 12vh;
+  text-align: center;
+}
+.CalendarHeading {
+  font-size: 5vh;
+  font-weight: 300;
+  margin: 0;
+}
+/* days-of-week grid */
+.CalendarWeek {
+  height: 7vh;
+  overflow: hidden;
+}
+.CalendarWeek li {
   background-color: #d7d7d7;
-  padding: 2px 0;
-  height: 2vh;
-  width: 14.2%;
+  font-size: 14px;
+  height: calc(7vh - 10px);
+  line-height: calc(7vh - 10px);
 }
-td {
-  background-color: #fff;
-  height: 24vh;
+/* calendar dates grid */
+.CalendarBody {
+  height: 80vh;
+}
+.CalendarBody li {
+  box-shadow: 0 3px 6px -3px #333;
+  font-size: 20px;
+  height: calc(20vh - 10px);
+}
+
+/***** sidebar section *****/
+.Sidebar {
+  background-color: #ccc;
+  border-left: solid 1px #966;
+  height: 100vh;
+  width: 20vw;
 }

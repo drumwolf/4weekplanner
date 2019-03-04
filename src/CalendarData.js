@@ -5,7 +5,7 @@ class CalendarData {
   constructor(dateString) {
     let dates  = this.createDateStrings(dateString);
     let months = this.createMonthString(dates);
-    this.data  = { 'dates': dates, 'month': months }
+    this.data  = { 'dates': dates, 'months': months }
   }
 
   /***** SET DATE STRINGS *****/

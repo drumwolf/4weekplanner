@@ -31,7 +31,7 @@ const CalendarBody = (props) => {
     const dateString = calendarDates[i];
     const dateNumber = Number( dateString.split('-')[2] );
     const dateMonth  = Number( dateString.split('-')[1] );
-    const monthClass = (firstMonth !== dateMonth) ? 'first-month' : 'second-month';
+    const monthClass = (firstMonth === dateMonth) ? 'first-month' : 'second-month';
     calendarItems.push(<li key={dateString} id={dateString} className={monthClass}>{ dateNumber }</li>);
   }
   return (
@@ -40,11 +40,10 @@ const CalendarBody = (props) => {
 }
 
 class Calendar extends Component {
-  calendarData = new CalendarData();
-
-  constructor() {
-    super();
-    this.state = this.calendarData.data;
+  constructor(props) {
+    super(props);
+    const cd = new CalendarData(props.date);
+    this.state = cd.data;
   }
   render() {
     return (

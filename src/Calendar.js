@@ -32,7 +32,9 @@ const CalendarBody = (props) => {
     const dateNumber = Number( dateString.split('-')[2] );
     const dateMonth  = Number( dateString.split('-')[1] );
     const monthClass = (firstMonth === dateMonth) ? 'first-month' : 'second-month';
-    calendarItems.push(<li key={dateString} id={dateString} className={monthClass}>{ dateNumber }</li>);
+    const todayClass = (props.today === dateString) ? 'today' : '';
+    const classNames = [monthClass, todayClass].join(' ');
+    calendarItems.push(<li key={dateString} id={dateString} className={classNames}>{ dateNumber }</li>);
   }
   return (
     <ul className="CalendarBody">{calendarItems}</ul>
@@ -50,7 +52,7 @@ class Calendar extends Component {
       <main className="Calendar">
         <CalendarHeader title={this.state.months} />
         <CalendarWeek />
-        <CalendarBody dates={this.state.dates} />
+        <CalendarBody dates={this.state.dates} today={this.state.today} />
       </main>
     );
   }

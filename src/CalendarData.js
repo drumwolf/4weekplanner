@@ -2,21 +2,24 @@ class CalendarData {
   monthsPerYear = [null, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   daysPerMonth  = [null, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-  constructor(dateString) {
-    let dates  = this.createDateStrings(dateString);
+  constructor(dateParam) {
+    let dates  = this.createDateStrings(dateParam);
     let months = this.createMonthString(dates);
-    this.data  = { 'dates': dates, 'months': months }
+    this.data  = { 'dates': dates, 'months': months, 'today': this.today }
   }
 
   /***** SET DATE STRINGS *****/
 
-  createDateStrings(dateString) {
-    let baseDate = this.setBaseDate(dateString);
+  createDateStrings(dateParam) {
+    let baseDate = this.setBaseDate(dateParam);
     let dateStrings = [];
     for (let i = 0; i < 28; i++) {
       const dateCopy = new Date(baseDate);
+      let dateString;
       dateCopy.setDate(  dateCopy.getDate() + i  );
-      dateStrings.push( this.dateToString(dateCopy) );
+      dateString = this.dateToString(dateCopy);
+      dateStrings.push( dateString );
+      if (this.isToday(dateCopy)) { this.today = dateString; }
     }
     return dateStrings;
   }
@@ -35,6 +38,13 @@ class CalendarData {
     const sundayDate = new Date(sundayInt);
     sundayDate.setHours(0,0,0,0);
     return sundayDate;
+  }
+
+  isToday(date) {
+    const today = new Date();
+    return (date.getDate() == today.getDate() &&
+            date.getMonth() == today.getMonth() &&
+            date.getFullYear() == today.getFullYear() );
   }
 
   isValidDate(yy, mm, dd) {

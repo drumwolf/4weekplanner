@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Calendar from './Calendar';
+import GSX from './GSX';
 
 class App extends Component {
   events = {
@@ -10,7 +11,11 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { date: this.getDateParam() }
+    this.state = { date: this.getDateParam(), schedule: [] }
+  }
+  componentWillMount() {
+    const gsx = new GSX('1d9BnXOfxtv65dAbfbeNvVEpyqYmgMDRKkiC-o5k-T1M');
+    gsx.fetch().then( data => this.setState({ schedule: data }) );
   }
   getDateParam() {
     const params = {};
@@ -24,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Calendar date={this.state.date} />
+        <Calendar date={this.state.date} schedule={this.state.schedule} />
         <aside className="Sidebar"></aside>
       </div>
     );

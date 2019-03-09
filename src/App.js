@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Calendar from './Calendar';
 
 class App extends Component {
-  customDates = {
+  events = {
     'peru': '2018-06-15',
     'laytcomers': '2019-04-20',
     'guatemala': '2019-06-15'
@@ -19,13 +19,12 @@ class App extends Component {
       const [key, value] = param.split('=');
       params[key] = value;
     });
-    return (params.name && this.customDates[params.name]) ? this.customDates[params.name] : params.date;
+    return (params.name && this.events[params.name]) ? this.events[params.name] : params.date;
   }
   render() {
-    const dateParam = this.getDateParam();
     return (
       <div className="App">
-        <Calendar date={dateParam}  />
+        <Calendar date={this.state.date} />
         <aside className="Sidebar"></aside>
       </div>
     );

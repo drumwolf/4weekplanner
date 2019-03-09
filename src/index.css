@@ -26,7 +26,8 @@ code {
   margin: 0;
   padding: 0;
 }
-.Calendar li {
+.CalendarWeek li,
+.CalendarBody > li {
   border-radius: 3px;
   box-sizing: border-box;
   float: left;
@@ -62,10 +63,19 @@ code {
 .CalendarBody {
   height: 80vh;
 }
-.CalendarBody li {
+.CalendarBody > li {
   box-shadow: 0 3px 6px -3px #333;
   font-size: 20px;
   height: calc(20vh - 10px);
+}
+/* calendar date schedule */
+.CalendarDateSchedule {
+  text-align: left;
+}
+.CalendarDateSchedule li {
+  color: #666;
+  font-size: 0.6em;
+  padding: 5px 10px;
 }
 
 /***** sidebar section *****/

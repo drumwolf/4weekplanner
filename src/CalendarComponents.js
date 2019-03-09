@@ -34,11 +34,11 @@ const CalendarBody = (props) => {
     const monthClass = (firstMonth === dateMonth) ? 'first-month' : 'second-month';
     const todayClass = (props.today === dateString) ? 'today' : '';
     const classNames = [monthClass, todayClass].join(' ');
-    const schedule = ( props.schedule[dateString] ) ? props.schedule[dateString].map( obj => <p>{obj}</p>) : "";
+    const schedule = ( props.schedule[dateString] ) ? props.schedule[dateString].map( obj => <li>{obj}</li>) : "";
     calendarItems.push(
       <li key={dateString} id={dateString} className={classNames}>
-        <div className="dateNumber">{ dateNumber }</div>
-        <div className="dateSchedule">{ schedule }</div>
+        <div className="CalendarDateNumber">{ dateNumber }</div>
+        <ul className="CalendarDateSchedule">{ schedule }</ul>
       </li>
     );
   }

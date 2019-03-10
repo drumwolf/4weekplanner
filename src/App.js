@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Calendar from './Calendar';
 import GSX from './GSX';
+import Sidebar from './Sidebar';
 
 class App extends Component {
   events = {
-    'peru': '2018-06-15',
+    'peru':       '2018-06-15',
     'laytcomers': '2019-04-20',
-    'guatemala': '2019-06-15'
+    'guatemala':  '2019-06-15'
   }
-
   constructor() {
     super();
     this.state = { date: this.getDateParam(), schedule: [] }
@@ -37,13 +37,13 @@ class App extends Component {
     return (params.name && this.events[params.name]) ? this.events[params.name] : params.date;
   }
   onDateClick(date) {
-    console.log(date, this.state.schedule[date])
+    this.setState({ sbDate: date, sbSchedule: this.state.schedule[date] })
   }
   render() {
     return (
       <div className="App">
         <Calendar date={this.state.date} schedule={this.state.schedule} onClick={this.onDateClick.bind(this)} />
-        <aside className="Sidebar"></aside>
+        <Sidebar date={this.state.sbDate} schedule={this.state.sbSchedule} />
       </div>
     );
   }

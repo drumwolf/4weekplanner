@@ -66,6 +66,20 @@ code {
   height: calc(20vh - 10px);
   overflow: hidden;
 }
+.CalendarDateNumber {
+  position: relative;
+}
+.first-month.today .CalendarDateNumber {
+  background-color: #633;
+  border-radius: 50%;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 1em;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin: -0.15em auto 0;
+  width: 1.5em;
+}
 /* first and second month styles */
 .first-month {
   box-shadow: 0 3px 6px -3px #633;
@@ -87,11 +101,13 @@ code {
 }
 /* calendar date schedule */
 .CalendarDateSchedule {
+  position: relative;
   text-align: left;
+  top: 15px;
 }
 .CalendarDateSchedule li {
   color: #666;
-  font-size: 0.6em;
+  font-size: 0.4em;
   padding: 5px 10px;
 }
 
@@ -149,7 +165,7 @@ code {
     left: calc(50% - 6px);
     margin: 0 auto;
     position: absolute;
-    top: 60%;
+    top: 66%;
     width: 12px;
   }
 }
@@ -162,6 +178,9 @@ code {
     height: calc(4.5vh - 10px);
     line-height: calc(4.5vh - 10px);
     margin-top: calc(5px + 1vh);
+  }
+  .CalendarDateNumber {
+    top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {

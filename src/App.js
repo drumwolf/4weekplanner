@@ -15,7 +15,17 @@ class App extends Component {
   }
   componentWillMount() {
     const gsx = new GSX('1d9BnXOfxtv65dAbfbeNvVEpyqYmgMDRKkiC-o5k-T1M');
-    gsx.fetch().then( data => this.setState({ schedule: data }) );
+    gsx.fetch().then( data => this.setState({ schedule: this.formatScheduleData(data) }) );
+  }
+  formatScheduleData(data) {
+    let date = '', hash = {};
+    for (let i = 0; i < data.length; i++) {
+          const obj = data[i];
+          date = (obj.date) ? obj.date : date;
+          hash[date] = hash[date] || [];
+          hash[date].push(obj.plans);
+    }
+    return hash;
   }
   getDateParam() {
     const params = {};
@@ -26,10 +36,13 @@ class App extends Component {
     });
     return (params.name && this.events[params.name]) ? this.events[params.name] : params.date;
   }
+  onDateClick(date) {
+    console.log(date, this.state.schedule[date])
+  }
   render() {
     return (
       <div className="App">
-        <Calendar date={this.state.date} schedule={this.state.schedule} />
+        <Calendar date={this.state.date} schedule={this.state.schedule} onClick={this.onDateClick.bind(this)} />
         <aside className="Sidebar"></aside>
       </div>
     );

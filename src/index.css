@@ -44,7 +44,6 @@ code {
   text-align: center;
 }
 .CalendarHeading {
-  font-size: 5vh;
   font-weight: 300;
   margin: 0;
 }
@@ -55,9 +54,6 @@ code {
 }
 .CalendarWeek li {
   background-color: #d7d7d7;
-  font-size: 14px;
-  height: calc(7vh - 10px);
-  line-height: calc(7vh - 10px);
 }
 /* calendar dates grid */
 .CalendarBody {
@@ -66,7 +62,6 @@ code {
 .CalendarBody > li {
   box-shadow: 0 3px 6px -3px #333;
   cursor: pointer;
-  font-size: 20px;
   height: calc(20vh - 10px);
   overflow: hidden;
 }
@@ -111,6 +106,35 @@ code {
 }
 .Sidebar li {
   margin-bottom: 1em;
+}
+
+/***** responsive styles *****/
+@media screen and (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+  .CalendarWeek li {
+    height: calc(5.5vh - 10px);
+    line-height: calc(5.5vh - 10px);
+    margin-top: calc(5px + 0.5vh);
+    margin-bottom: calc(5px + 0.5vh);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .CalendarHeading {
+    font-size: 50px;
+  }
+  .CalendarWeek li {
+    font-size: 1.2em;
+    height: calc(4.5vh - 10px);
+    line-height: calc(4.5vh - 10px);
+    margin-top: calc(5px + 1vh);
+  }
 }
 @media screen and (min-width: 1200px) {
   .Calendar {

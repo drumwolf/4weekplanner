@@ -11,13 +11,13 @@ const CalendarHeader = (props) => {
 const CalendarWeek = () => {
   return (
     <ul className="CalendarWeek">
-      <li>Sunday</li>
-      <li>Monday</li>
-      <li>Tuesday</li>
-      <li>Wednesday</li>
-      <li>Thursday</li>
-      <li>Friday</li>
-      <li>Saturday</li>
+      <li><code>Sun<span className="desktop">day</span></code></li>
+      <li><code>Mon<span className="desktop">day</span></code></li>
+      <li><code>Tue<span className="desktop">sday</span></code></li>
+      <li><code>Wed<span className="desktop">nesday</span></code></li>
+      <li><code>Thu<span className="desktop">rsday</span></code></li>
+      <li><code>Fri<span className="desktop">day</span></code></li>
+      <li><code>Sat<span className="desktop">urday</span></code></li>
     </ul>
   );
 }

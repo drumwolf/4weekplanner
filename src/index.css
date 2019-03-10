@@ -61,11 +61,29 @@ code {
   height: 80vh;
 }
 .CalendarDate {
-  box-shadow: 0 3px 6px -3px #333;
   cursor: pointer;
   font-size: 1.6em;
   height: calc(20vh - 10px);
   overflow: hidden;
+}
+/* first and second month styles */
+.first-month {
+  box-shadow: 0 3px 6px -3px #633;
+}
+.first-month .CalendarDateNumber {
+  color: #633;
+}
+.first-month .CalendarMobileEntry {
+  background-color: #633;
+}
+.second-month {
+  box-shadow: 0 3px 6px -3px #000;
+}
+.second-month .CalendarDateNumber {
+  color: #333;
+}
+.second-month .CalendarMobileEntry {
+  background-color: #333;
 }
 /* calendar date schedule */
 .CalendarDateSchedule {
@@ -126,7 +144,6 @@ code {
     top: 30%;
   }
   .CalendarMobileEntry {
-    background-color: #966;
     border-radius: 10px;
     height: 12px;
     left: calc(50% - 6px);

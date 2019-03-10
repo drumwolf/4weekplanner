@@ -101,9 +101,9 @@ code {
 }
 /* calendar date schedule */
 .CalendarDateSchedule {
-  position: relative;
+  position: absolute;
   text-align: left;
-  top: 15px;
+  top: 2em;
 }
 .CalendarDateSchedule li {
   color: #666;

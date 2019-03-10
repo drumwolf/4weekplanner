@@ -37,13 +37,16 @@ class App extends Component {
     return (params.name && this.events[params.name]) ? this.events[params.name] : params.date;
   }
   onDateClick(date) {
-    this.setState({ sbDate: date, sbSchedule: this.state.schedule[date] })
+    this.setState({ sbDate: date, sbSchedule: this.state.schedule[date] });
+  }
+  onSidebarClick() {
+    this.setState({ sbDate: null, sbSchedule: null });
   }
   render() {
     return (
       <div className="App">
         <Calendar date={this.state.date} schedule={this.state.schedule} onClick={this.onDateClick.bind(this)} />
-        <Sidebar date={this.state.sbDate} schedule={this.state.sbSchedule} />
+        <Sidebar date={this.state.sbDate} schedule={this.state.sbSchedule} onClick={this.onSidebarClick.bind(this)} />
       </div>
     );
   }

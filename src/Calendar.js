@@ -12,7 +12,7 @@ class Calendar extends Component {
       <main className="Calendar">
         <CalendarHeader title={this.state.months} />
         <CalendarWeek />
-        <CalendarBody dates={this.state.dates} today={this.state.today} schedule={this.props.schedule} onClick={ e => this.props.onClick(e) } />
+        <CalendarBody dates={this.state.dates} today={this.state.today} schedule={this.props.schedule} onClick={this.props.onClick} />
       </main>
     );
   }

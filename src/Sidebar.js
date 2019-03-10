@@ -5,7 +5,7 @@ const Sidebar = (props) => {
   const status = (props.schedule) ? 'open' : null;
   const styles = ['Sidebar', status].join(' ');
   return (
-    <aside className={styles}>
+    <aside className={styles} onClick={props.onClick}>
       <h2>{props.date}</h2>
       <ul>{schedule}</ul>
     </aside>

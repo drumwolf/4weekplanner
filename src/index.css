@@ -32,6 +32,7 @@ code {
   box-sizing: border-box;
   float: left;
   margin: 5px 2px;
+  position: relative;
   text-align: center;
   width: calc(14.25% - 4px);
 }
@@ -124,10 +125,15 @@ code {
     position: relative;
     top: 30%;
   }
-}
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .desktop {
-    display: none;
+  .CalendarMobileEntry {
+    background-color: #966;
+    border-radius: 10px;
+    height: 12px;
+    left: calc(50% - 6px);
+    margin: 0 auto;
+    position: absolute;
+    top: 60%;
+    width: 12px;
   }
 }
 @media screen and (min-width: 768px) {

@@ -38,16 +38,18 @@ class CalendarBody extends Component {
       const monthClass = (firstMonth === dateMonth) ? 'first-month' : 'second-month';
       const todayClass = (this.props.today === dateString) ? 'today' : '';
       const classNames = ['CalendarDate', monthClass, todayClass].join(' ');
-      const schedule = ( this.props.schedule[dateString] ) ? this.props.schedule[dateString].map( obj => <li key={obj}>{obj}</li>) : "";
+      const schedule   = ( this.props.schedule[dateString] ) ? this.props.schedule[dateString].map( obj => <li key={obj}>{obj}</li>) : "";
+      const mobileItem = ( this.props.schedule[dateString] ) ? <div className="CalendarMobileEntry"></div> : "";
       calendarItems.push(
         <li key={dateString} id={dateString} className={classNames} onClick={ this.getDate.bind(this)  }>
           <div className="CalendarDateNumber">{ dateNumber }</div>
-          <ul className="CalendarDateSchedule">{ schedule }</ul>
+          <ul className="CalendarDateSchedule desktop">{ schedule }</ul>
+          { mobileItem }
         </li>
       );
     }
     return (
-      <ul className="CalendarBody">{calendarItems}</ul>
+      <ul className="CalendarBody">{ calendarItems }</ul>
     );
   }
 }

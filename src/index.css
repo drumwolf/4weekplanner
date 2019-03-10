@@ -171,10 +171,10 @@ code {
 }
 @media screen and (min-width: 768px) {
   .CalendarHeading {
-    font-size: 50px;
+    font-size: 40px;
   }
   .CalendarWeek li {
-    font-size: 1.2em;
+    font-size: 1.1em;
     height: calc(4.5vh - 10px);
     line-height: calc(4.5vh - 10px);
     margin-top: calc(5px + 1vh);

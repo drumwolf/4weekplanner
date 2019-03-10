@@ -19,7 +19,7 @@ code {
 
 /***** calendar section *****/
 .Calendar {
-  width: 80vw;
+  width: 98vw;
 }
 .Calendar ul {
   list-style: none;
@@ -65,8 +65,10 @@ code {
 }
 .CalendarBody > li {
   box-shadow: 0 3px 6px -3px #333;
+  cursor: pointer;
   font-size: 20px;
   height: calc(20vh - 10px);
+  overflow: hidden;
 }
 /* calendar date schedule */
 .CalendarDateSchedule {
@@ -81,7 +83,41 @@ code {
 /***** sidebar section *****/
 .Sidebar {
   background-color: #ccc;
-  border-left: solid 1px #966;
+  border-left: solid 1px #999;
+  box-shadow: 3px 3px 10px 3px #333;
+  cursor: pointer;
   height: 100vh;
-  width: 20vw;
+  transition: 0.25s;
+  width: 2vw;
+  right: 0;
+  position: absolute;
+}
+.Sidebar h2,
+.Sidebar ul {
+  color: #ccc;
+  display: none;
+}
+.Sidebar.open {
+  transition: 0.25s;
+  width: 50vw;
+}
+.Sidebar.open h2,
+.Sidebar.open ul {
+  color: #000;
+  display: block;
+}
+.Sidebar h2 {
+  text-align: center;
+}
+.Sidebar li {
+  margin-bottom: 1em;
+}
+@media screen and (min-width: 1200px) {
+  .Calendar {
+    width: 80vw;
+  }
+  .Sidebar,
+  .Sidebar.open {
+    width: 20vw;
+  }
 }

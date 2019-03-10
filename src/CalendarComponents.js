@@ -37,7 +37,7 @@ class CalendarBody extends Component {
       const dateMonth  = Number( dateString.split('-')[1] );
       const monthClass = (firstMonth === dateMonth) ? 'first-month' : 'second-month';
       const todayClass = (this.props.today === dateString) ? 'today' : '';
-      const classNames = [monthClass, todayClass].join(' ');
+      const classNames = ['CalendarDate', monthClass, todayClass].join(' ');
       const schedule = ( this.props.schedule[dateString] ) ? this.props.schedule[dateString].map( obj => <li key={obj}>{obj}</li>) : "";
       calendarItems.push(
         <li key={dateString} id={dateString} className={classNames} onClick={ this.getDate.bind(this)  }>

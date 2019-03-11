@@ -144,6 +144,7 @@ code {
   display: block;
 }
 .Sidebar h2 {
+  text-decoration: underline;
   text-align: center;
 }
 .Sidebar li {

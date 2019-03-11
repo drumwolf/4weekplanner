@@ -19,7 +19,7 @@ code {
 
 /***** calendar section *****/
 .Calendar {
-  width: 98vw;
+  width: 99vw;
 }
 .Calendar ul {
   list-style: none;
@@ -114,10 +114,15 @@ code {
 /***** sidebar section *****/
 .Sidebar {
   background-color: #ccc;
-  border-left: solid 1px #999;
+  border: solid 1px #999;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   box-shadow: 3px 3px 10px 3px #333;
   cursor: pointer;
-  height: 100vh;
+  height: calc(100vh - 2px);
+  opacity: 0.98;
+  top: 0.5vh;
   transition: 0.25s;
   width: 2vw;
   right: 0;
@@ -130,7 +135,8 @@ code {
 }
 .Sidebar.open {
   transition: 0.25s;
-  width: 50vw;
+  height: 98vh;
+  width: 95vw;
 }
 .Sidebar.open h2,
 .Sidebar.open ul {
@@ -199,6 +205,10 @@ code {
   }
   .Sidebar,
   .Sidebar.open {
+    box-shadow: none;
+    height: calc(100vh - 2px);
+    opacity: 1.0;
+    top: 0;
     width: 20vw;
   }
 }

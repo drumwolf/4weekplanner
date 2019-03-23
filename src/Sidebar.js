@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DAYSPERWEEK = [null, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYSPERWEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const Sidebar = (props) => {
   const schedule = (props.schedule) ? props.schedule.map( item => <li key={item}>{item}</li> ) : null;

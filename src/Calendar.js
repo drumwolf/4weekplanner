@@ -7,6 +7,12 @@ class Calendar extends Component {
     super(props);
     this.state = new CalendarData(props.date).data;
   }
+  componentWillUpdate(props) {
+    if (this.props.date !== props.date) {
+      const data = new CalendarData(props.date).data;
+      this.setState(data)
+    }
+  }
   render() {
     return (
       <main className="Calendar">

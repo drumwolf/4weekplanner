@@ -17,6 +17,12 @@ class App extends Component {
     const gsx = new GSX('1d9BnXOfxtv65dAbfbeNvVEpyqYmgMDRKkiC-o5k-T1M');
     gsx.fetch().then( data => this.setState({ schedule: this.formatScheduleData(data) }) );
   }
+  componentDidMount() {
+    const callback = (e) => {
+      this.setState({ date: this.getDateHash() });
+    }
+    window.addEventListener("hashchange",callback);
+  }
   formatScheduleData(data) {
     let date = '', hash = {};
     for (let i = 0; i < data.length; i++) {

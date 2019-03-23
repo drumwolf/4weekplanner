@@ -11,7 +11,7 @@ class App extends Component {
   }
   constructor() {
     super();
-    this.state = { date: this.getDateParam(), schedule: [] }
+    this.state = { date: this.getDateHash(), schedule: [] }
   }
   componentWillMount() {
     const gsx = new GSX('1d9BnXOfxtv65dAbfbeNvVEpyqYmgMDRKkiC-o5k-T1M');
@@ -27,14 +27,9 @@ class App extends Component {
     }
     return hash;
   }
-  getDateParam() {
-    const params = {};
-    const paramArray = window.location.search.substring(1).split('&');
-    paramArray.forEach( param => {
-      const [key, value] = param.split('=');
-      params[key] = value;
-    });
-    return (params.name && this.events[params.name]) ? this.events[params.name] : params.date;
+  getDateHash() {
+    const hash = window.location.hash.substring(1);
+    return this.events[hash] || hash;
   }
   onDateClick(date) {
     this.setState({ sbDate: date, sbSchedule: this.state.schedule[date] });

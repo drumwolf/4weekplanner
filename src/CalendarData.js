@@ -5,7 +5,7 @@ class CalendarData {
   constructor(dateParam) {
     let dates  = this.createDateStrings(dateParam);
     let months = this.createMonthString(dates);
-    this.data  = { 'dates': dates, 'months': months, 'today': this.today }
+    this.data  = { 'dates': dates, 'months': months, 'today': this.today, 'prev': this.prev, 'next': this.next }
   }
 
   /***** SET DATE STRINGS *****/
@@ -13,6 +13,7 @@ class CalendarData {
   createDateStrings(dateParam) {
     let baseDate = this.setBaseDate(dateParam);
     let dateStrings = [];
+    // create dateStrings
     for (let i = 0; i < 28; i++) {
       const dateCopy = new Date(baseDate);
       let dateString;
@@ -20,7 +21,16 @@ class CalendarData {
       dateString = this.dateToString(dateCopy);
       dateStrings.push( dateString );
       if (this.isToday(dateCopy)) { this.today = dateString; }
+      // create 'next' date
+      if (i === 7) {
+        this.next = dateString;
+      }
     }
+    // create 'prev' date
+    let prevDate = new Date(baseDate);
+    prevDate.setDate( prevDate.getDate() - 7 );
+    this.prev = this.dateToString(prevDate);
+    // return dateStrings
     return dateStrings;
   }
 

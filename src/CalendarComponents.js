@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 const CalendarHeader = (props) => {
   return (
     <header className="CalendarHeader">
-      <button id="HeaderArrowLeft" className="CalendarHeaderArrow"> &#171; </button>
+      <button id="HeaderArrowLeft" className="CalendarHeaderArrow" onClick={ () => window.location.hash = props.prev }> &#171; </button>
       <h1 className="CalendarHeading">{props.title}</h1>
-      <button id="HeaderArrowRight" className="CalendarHeaderArrow"> &#187; </button>
+      <button id="HeaderArrowRight" className="CalendarHeaderArrow" onClick={ () => window.location.hash = props.next }> &#187; </button>
     </header>
   );
 }

@@ -16,7 +16,7 @@ class Calendar extends Component {
   render() {
     return (
       <main className="Calendar">
-        <CalendarHeader title={this.state.months} />
+        <CalendarHeader title={this.state.months} prev={this.state.prev} next={this.state.next} />
         <CalendarWeek />
         <CalendarBody dates={this.state.dates} today={this.state.today} schedule={this.props.schedule} onClick={this.props.onClick} />
       </main>

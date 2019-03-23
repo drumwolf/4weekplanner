@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 const CalendarHeader = (props) => {
   return (
     <header className="CalendarHeader">
+      <button id="HeaderArrowLeft" class="CalendarHeaderArrow"> &#171; </button>
       <h1 className="CalendarHeading">{props.title}</h1>
+      <button id="HeaderArrowRight" class="CalendarHeaderArrow"> &#187; </button>
     </header>
   );
 }

@@ -42,11 +42,24 @@ code {
   color: #ccc;
   height: 12vh;
   line-height: 12vh;
+  position: relative;
   text-align: center;
 }
 .CalendarHeading {
   font-weight: 300;
   margin: 0;
+}
+/* calendar header arrows */
+.CalendarHeaderArrow {
+  background-color: #300;
+  border-radius: 50%;
+  border: solid 1px #ccc;
+  color: #ccc;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  position: absolute;
+  text-align: center;
 }
 /* days-of-week grid */
 .CalendarWeek {
@@ -156,6 +169,19 @@ code {
   .desktop {
     display: none;
   }
+  .CalendarHeaderArrow {
+    font-size: 2em;
+    height: 1.2em;
+    line-height: 0.8em;
+    top: calc(50% - 0.6em);
+    width: 1.2em;
+  }
+  #HeaderArrowLeft {
+    left: 0.5em;
+  }
+  #HeaderArrowRight {
+    right: 0.5em;
+  }
   .CalendarWeek li {
     height: calc(5.5vh - 10px);
     line-height: calc(5.5vh - 10px);
@@ -180,6 +206,19 @@ code {
   .CalendarHeading {
     font-size: 40px;
   }
+  .CalendarHeaderArrow {
+    font-size: 2em;
+    height: 1.5em;
+    line-height: 0.5em;
+    top: calc(50% - 0.75em);
+    width: 1.5em;
+  }
+  #HeaderArrowLeft {
+    left: 1em;
+  }
+  #HeaderArrowRight {
+    right: 1em;
+  }
   .CalendarWeek li {
     height: calc(4.5vh - 10px);
     line-height: calc(4.5vh - 10px);
@@ -187,6 +226,11 @@ code {
   }
   .CalendarDateNumber {
     top: 10px;
+  }
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .CalendarHeaderArrow {
+    font-size: 2.5em;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
